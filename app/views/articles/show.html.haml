@@ -1,0 +1,9 @@
+-content_for :header do
+  = I18n.t('info')
+
+= link_to I18n.t('edit'), edit_article_path(id: @article.id)
+= link_to I18n.t('download'), download_file_article_path(id: @article.id)
+
+%h1= @article.title
+%p= @article.body
+= image_tag @article.image

@@ -1,0 +1,7 @@
+= form_with model: @article, local: true do  |form|
+  = form.label I18n.t('title')
+  = form.text_field :title, value: @article.title
+  = form.file_field :image
+  = form.label :body, I18n.t('content')
+  = form.text_area :body, value: @article.body
+  = form.submit I18n.t('save')

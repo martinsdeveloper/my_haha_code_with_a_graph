@@ -1,0 +1,18 @@
+
+<nav class="md-sidebar md-red md-collapse md-top md-large md-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="md-button md-hide-large md-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <div class="md-container">
+    <h3 class="md-padding-64"><b>Mārtiņš Dargužis</b></h3>
+  </div>
+  <div class="md-bar-block">
+    <% if user_signed_in? %>
+      <%= link_to I18n.t('articles'), articles_path, class: "md-bar-item md-button md-hover-white" %>
+      <%= link_to I18n.t('edit_account'), edit_user_registration_path, class: "md-bar-item md-button md-hover-white" %>
+      <%= link_to I18n.t('sign_out'), destroy_user_session_path, :method=>'delete', class: "md-bar-item md-button md-hover-white" %>
+
+    <% else %>
+      <%= link_to I18n.t('log_in'), new_user_session_path, class: "md-bar-item md-button md-hover-white" %>
+    <% end %>
+
+  </div>
+</nav>

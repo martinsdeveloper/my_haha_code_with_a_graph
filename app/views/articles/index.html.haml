@@ -1,0 +1,13 @@
+- content_for :header do
+  = I18n.t('articles')
+
+= link_to  I18n.t('new'), new_article_path
+
+%table
+  -@articles.each do |a|
+    %tr
+      %td= link_to a.title, article_path(id: a.id)
+      %td= a.body
+      %td= a.created_at
+      %td= button_to I18n.t('edit'), edit_article_path(a), method: :get
+      %td= button_to I18n.t('delete'), a, method: :delete, form: { data: { turbo: true, turbo_confirm:  I18n.t('are_you_sure')  }}

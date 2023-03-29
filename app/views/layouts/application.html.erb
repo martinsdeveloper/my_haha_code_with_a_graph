@@ -6,12 +6,53 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+
+
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   </head>
 
   <body>
+    <%= render 'common/menu/side'%>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= yield %>
-  </body>
+
+  <div class="md-main" style="margin-left:340px;margin-right:40px">
+
+    <div class="md-container" style="margin-top:80px" id="showcase">
+      <h1 class="md-jumbo"><b>
+        <%= yield(:jumbo) %>
+      </b></h1>
+      <h1 class="md-xxxlarge md-text-red"><b>
+         <%= yield(:header) %>
+      </b></h1>
+      <hr style="width:50px;border:5px solid red" class="md-round">
+    </div>
+
+
+    <div class="md-container" style="margin-top:80px" id="showcase">
+      <%= yield %>
+    </div>
+
+    <div id="modal01" class="md-modal md-black" style="padding-top:0" onclick="this.style.display='none'">
+      <span class="md-button md-black md-xxlarge md-display-topright">×</span>
+      <div class="md-modal-content md-animate-zoom md-center md-transparent md-padding-64">
+        <img id="img01" class="md-image">
+        <p id="caption"></p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="md-overlay md-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+
+  <div class="md-light-grey md-container md-padding-32" style="margin-top:75px;padding-right:58px"></div>
+
+
+</body>
 </html>
+
