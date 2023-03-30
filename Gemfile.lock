@@ -82,10 +82,13 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
+    chartkick (5.0.1)
     concurrent-ruby (1.2.2)
     crass (1.0.6)
     date (3.3.3)
-    debug (1.7.1)
+    debug (1.7.2)
+      irb (>= 1.5.0)
+      reline (>= 0.3.1)
     devise (4.9.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -95,6 +98,8 @@ GEM
     erubi (1.12.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
+    groupdate (6.2.0)
+      activesupport (>= 5.2)
     haml (6.1.1)
       temple (>= 0.8.2)
       thor
@@ -104,6 +109,9 @@ GEM
     importmap-rails (1.1.5)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
+    io-console (0.6.0)
+    irb (1.6.3)
+      reline (>= 0.3.0)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -120,7 +128,7 @@ GEM
     method_source (1.0.0)
     mini_mime (1.1.2)
     minitest (5.18.0)
-    msgpack (1.6.1)
+    msgpack (1.7.0)
     net-imap (0.3.4)
       date
       net-protocol
@@ -170,12 +178,14 @@ GEM
       zeitwerk (~> 2.5)
     rake (13.0.6)
     regexp_parser (2.7.0)
+    reline (0.3.3)
+      io-console (~> 0.5)
     responders (3.1.0)
       actionpack (>= 5.2)
       railties (>= 5.2)
     rexml (3.2.5)
     rubyzip (2.3.2)
-    selenium-webdriver (4.8.3)
+    selenium-webdriver (4.8.6)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
@@ -223,8 +233,10 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   capybara
+  chartkick
   debug
   devise
+  groupdate
   haml
   importmap-rails
   jbuilder

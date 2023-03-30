@@ -2,7 +2,7 @@
   = I18n.t('articles')
 
 = link_to  I18n.t('new'), new_article_path
-
+= line_chart @articles.group_by_day(:created_at).count
 %table
   -@articles.each do |a|
     %tr
